@@ -1,0 +1,16 @@
+def calc_counts(data,column):
+    sums_dict={}
+    for row in data:
+        col_value=row[column]
+        births=row[4]
+        if col_value in sums_dict:
+            sums_dict[col_value]=sums_dict[col_value]+births
+        else:
+            sums_dict[col_value]=births
+    return sums_dict
+
+cdc_year_births=calc_counts(cdc_list,0) #number of births per year
+cdc_month_births=calc_counts(cdc_list,1) #number of births per month
+cdc_dom_births=calc_counts(cdc_list,2) #number of births per day of month
+cdc_dow_births=calc_counts(cdc_list,3) #number of births per day of week
+         
